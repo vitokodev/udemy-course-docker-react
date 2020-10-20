@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t vitokodev/udemy-course-docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true vitokodev/udemy-course-docker-react npm run test
+# - docker run vitokodev/udemy-course-docker-react npm run test -- --coverage
