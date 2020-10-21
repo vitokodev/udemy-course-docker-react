@@ -13,7 +13,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   # http://udemycoursedockerreact-env.eba-h3mkhjmq.us-east-2.elasticbeanstalk.com/
-  app: "UdemyCourseDockerReact"
+  app: "Udemy Course Docker React"
   env: "UdemyCourseDockerReact-env"
   bucket_name: "elasticbeanstalk-us-east-2-978288089666"
   bucket_path: "UdemyCourseDockerReact"
