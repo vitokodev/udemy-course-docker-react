@@ -7,4 +7,17 @@ before_install:
 
 script:
   - docker run -e CI=true vitokodev/udemy-course-docker-react npm run test
-# - docker run vitokodev/udemy-course-docker-react npm run test -- --coverage
+  # - docker run vitokodev/udemy-course-docker-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  # http://udemycoursedockerreact-env.eba-h3mkhjmq.us-east-2.elasticbeanstalk.com/
+  app: "UdemyCourseDockerReact"
+  env: "UdemyCourseDockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-978288089666"
+  bucket_path: "UdemyCourseDockerReact"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
